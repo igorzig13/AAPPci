@@ -1,0 +1,32 @@
+create database AAPP;
+use AAPP;
+create table cliente (
+	id_cliente int(3) auto_increment primary key,
+	nome varchar(50),
+	modo char(1) default 1,
+	cpf varchar(14),
+	email varchar(50),
+	data_inicio varchar(10),
+	celular varchar(15),
+	telefone varchar(15),
+	rua varchar(50),
+	num_casa int(6),
+	bairro varchar(30)
+ );
+
+create table funcionario (
+	login varchar(50) primary key,
+	nome varchar(50),
+	senha varchar(100),
+	tipo varchar(15),
+	salario int(5)
+ );
+
+create table pagamento (
+	login varchar(50),
+	foreign key (login) references funcionario(login),
+	id_cliente int(3),
+	foreign key (id_cliente) references cliente(id_cliente),
+	data varchar(10),
+	mes_ref int(2)
+);
