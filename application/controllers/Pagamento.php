@@ -9,7 +9,12 @@ class Pagamento extends CI_Controller {
 	}
 
 	public function index()	{
-		$this->load->view('./pagamento/pagamentos');
+		$this->load->view('cabeca');
+		$this->load->view('nav');
+		$this->load->view('pagamento/pagamentos');
+		$this->load->view('rodape');
 	}
+
+	
 
 }

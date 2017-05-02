@@ -8,8 +8,13 @@ class Principal extends CI_Controller {
 		$this->load->helper('url');
 	}
 
+
 	public function index()	{
+		$this->load->view('cabeca');
+		$this->load->view('nav');
 		$this->load->view('principal/pagPrincipal');
+		$this->load->view('rodape');
+
 	}
 
 }
