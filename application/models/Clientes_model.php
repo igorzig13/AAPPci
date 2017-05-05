@@ -18,6 +18,7 @@ class Clientes_model extends CI_Model {
     public function cadastrar_cliente() {
         $this->load->helper('url');
         $this->load->library('session');
+        //alterar isso conforme os input do formulário e os atributos que existam na tabela cliente
         $data = array(
             'usuario_idusuario' => $_SESSION['id'],
             'nome' => $this->input->post('nome'),

@@ -34,7 +34,7 @@
                 Clique para conferir a relação completa de clientes.
               </div>
               <div class="card-action">
-                <a class=" blue-text zLink right" href="listaClientes.php">Ver clientes</a>
+                <a class=" blue-text zLink right" href="<?php echo base_url("Cliente/listar") ?>">Ver clientes</a>
               </div>
             </div>
           </div>
@@ -83,14 +83,16 @@
   <div class="section"></div>
 
   
-  <!--  MODALS -->
+  
+  <!-- modal cliente -->
   <div id="modalCliente" class="modal modal-fixed-footer">
     <div class="modal-content">
       <div class="center">
         <h3 class="light">Novo cliente</h3>
         <p>Preencha o formulário:</p>
       </div>
-      <form action="./forms/cliente.php" method="post" id="cadCliente">
+      <?php echo form_open('Cliente/cadastrar'); ?>
+      <form action="" method="post" id="cadCliente">
         <div class="row">
           <div class="input-field col s6">
             <input type="text" class="validate" id="nomeCliente" name="nome" required>
@@ -137,6 +139,9 @@
     </form>
   </div>
 
+  
+  
+  <!-- modal pagamento-->
   <div id="modalPagamento" class="modal modal-fixed-footer">
     <div class="modal-content">
       <div class="center">

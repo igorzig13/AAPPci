@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col l6 s12">
         <h5 class="white-text">TCC - Samuel e Igor</h5>
-        <p class="grey-text text-lighten-4">Um site para controle de cadastro e pagamento de clientes de uma Associação de Água Potável de Poços. </p>
+        <p class="grey-text text-lighten-4">Um site para controle de cadastro e pagamento de clientes de uma Associação de �?gua Potável de Poços. </p>
 
       </div>
       <div class="col l3 s6">
@@ -34,7 +34,7 @@
 </footer>
 
 <!--  Scripts-->
-<script type='text/javascript' src="<?php echo base_url('assets/jquery/jquery-3.1.1.min.js') ?>"></script>
+
 <script type='text/javascript' src="<?php echo base_url('assets/js/materialize.js') ?>"></script>
 <script type='text/javascript' src="<?php echo base_url('assets/js/jquery.mask.min.js') ?>"></script>
 <script type='text/javascript' src="<?php echo base_url('assets/js/init.js') ?>"></script>

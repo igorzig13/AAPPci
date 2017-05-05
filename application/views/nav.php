@@ -1,4 +1,4 @@
-<body class="grey lighten-4">
+
   <div class="navbar-fixed">
     <nav class="teal darken-2" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="" class="brand-logo">AAPP</a>
