@@ -91,7 +91,7 @@
         <h3 class="light">Novo cliente</h3>
         <p>Preencha o formulário:</p>
       </div>
-      <?php echo form_open('Cliente/cadastrar'); ?>
+     
       <form action="" method="post" id="cadCliente">
         <div class="row">
           <div class="input-field col s6">
