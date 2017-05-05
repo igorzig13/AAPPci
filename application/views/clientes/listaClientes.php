@@ -7,16 +7,19 @@
                 <th>Nome</th>
                 <th>Telefone</th>
                 <th>CPF</th>
+                <th>Rua</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($clientes as $clientes_item): ?>
                 <tr>
-                    <td><?php echo $clientes_item['nomeCliente']; ?></td>
-                    <td><?php echo $clientes_item['telCliente']; ?></td>
+                    <td><?php echo $clientes_item['nome']; ?></td>
+                    <td><?php echo $clientes_item['telefone']; ?></td>
+                    <td><?php echo $clientes_item['cpf']; ?></td>
+                    <td><?php echo $clientes_item['rua']; ?></td>
                     <td>
-                        <a href="<?php echo base_url("Clientes/editar/" . $clientes_item['idcliente']); ?>"><i class="material-icons">edit</i></a>
-                        <a href="<?php echo base_url("Clientes/detalhar/" . $clientes_item['idcliente']); ?>"><i class="material-icons">search</i></a>
+                        <a href="<?php echo base_url('index.php/Cliente/editar/' . $clientes_item['id_cliente']); ?>"><i class="material-icons">edit</i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>

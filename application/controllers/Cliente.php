@@ -10,13 +10,6 @@ class Cliente extends CI_Controller {
         $this->load->model('Clientes_model');
     }
 
-    public function editar() {
-        $this->load->view('cabeca');
-        $this->load->view('nav');
-        $this->load->view('clientes/editaCliente');
-        $this->load->view('rodape');
-    }
-
     public function listar() {
         $this->load->library('pagination');
         $maximo = 10;
@@ -25,7 +18,7 @@ class Cliente extends CI_Controller {
         $config['total_rows'] = $this->Clientes_model->conta_clientes();
         $config['per_page'] = $maximo;
         $config['first_link'] = 'Primeiro';
-        $config['last_link'] = 'Último';
+        $config['last_link'] = 'ï¿½ltimo';
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_tag_open'] = '<li>';
@@ -57,7 +50,7 @@ class Cliente extends CI_Controller {
 
         $this->form_validation->set_rules('nome', 'Nome', 'required', array('required' => 'Preencha o campo Nome.'));
 
-        if ($this->Clientes_model->cadastrar_cliente()) {//tentar inserir 
+        if ($this->Clientes_model->cadastrar_cliente()) {//tentar inserir
             $this->load->view('cabeca');
             $this->load->view('nav');
             $this->load->view('clientes/listaClientes', $param);
@@ -69,5 +62,12 @@ class Cliente extends CI_Controller {
             $this->load->view('rodape');
         }
     }
-
+    public function editar($id) {
+        $this->load->library('form_validation');
+        $data['dados_cliente'] = $this->Clientes_model->editar($id);
+        $this->load->view('cabeca');
+        $this->load->view('nav');
+        $this->load->view('clientes/editaCliente', $data);
+        $this->load->view('rodape');
+    }
 }

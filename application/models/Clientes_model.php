@@ -18,21 +18,18 @@ class Clientes_model extends CI_Model {
     public function cadastrar_cliente() {
         $this->load->helper('url');
         $this->load->library('session');
-        //alterar isso conforme os input do formulário e os atributos que existam na tabela cliente
+        //alterar isso conforme os input do formulï¿½rio e os atributos que existam na tabela cliente
         $data = array(
             'usuario_idusuario' => $_SESSION['id'],
             'nome' => $this->input->post('nome'),
             'cpf' => $this->input->post('cpf'),
-            'nascimento' => $this->input->post('nascimento'),
-            'rua' => $this->input->post('rua'),
-            'numero' => $this->input->post('numero'),
-            'bairro' => $this->input->post('bairro'),
-            'estado' => $this->input->post('estado'),
-            'cep' => $this->input->post('cep'),
             'email' => $this->input->post('email'),
+            'data' => $this->post('data'),
+            'rua' => $this->input->post('rua'),
+            'numCasa' => $this->input->post('numCasa'),
+            'bairro' => $this->input->post('bairro'),
             'telefone' => $this->input->post('telefone'),
-            'sexo' => $this->input->post('sexo'),
-            'observacao' => $this->input->post('observacao')
+            'celular' => $this->input->post('celular')
         );
 
 
@@ -46,6 +43,10 @@ class Clientes_model extends CI_Model {
     public function clientes_cadastrados() {
         $query = $this->db->count_all_results('cliente');
         return $query;
+    }
+    public function editar($id) {
+        $this->db->where('id_cliente', $id);
+        return $this->db->get('cliente')->result();
     }
   }
 ?>
