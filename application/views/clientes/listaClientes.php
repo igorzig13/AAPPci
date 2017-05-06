@@ -4,6 +4,7 @@
     <table class="striped">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Telefone</th>
                 <th>CPF</th>
@@ -14,6 +15,7 @@
         <tbody>
             <?php foreach ($clientes as $clientes_item): ?>
                 <tr>
+                    <td><?php echo $clientes_item['id_cliente']; ?></td>
                     <td><?php echo $clientes_item['nome']; ?></td>
                     <td><?php echo $clientes_item['telefone']; ?></td>
                     <td><?php echo $clientes_item['cpf']; ?></td>

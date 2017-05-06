@@ -84,4 +84,28 @@ class Cliente extends CI_Controller {
         $this->load->view('rodape');
     }
 
+    public function atualizar() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('nome', 'Nome', 'required', array('required' => 'Preencha o campo Nome.'));
+
+        if ($this->form_validation->run() === FALSE) {//erro na validação (ou primeira vez que carregar)
+            $this->load->view('cabeca');
+            $this->load->view('nav');
+            //$this->load->view('mensagens/erro');
+            $this->load->view('principal/pagPrincipal');
+            $this->load->view('rodape');
+        } else {
+            $this->load->view('cabeca');
+            $this->load->view('nav');
+            if ($this->Clientes_model->atualizar_cliente()) {//erro na inserção do novo usuario
+              //  $this->load->view('clientes/listaClientes');
+            } else {
+              //  $this->load->view('principal/pagPrincipal');
+            }
+            $this->load->view('principal/pagPrincipal');
+            $this->load->view('rodape');
+        }
+    }
 }

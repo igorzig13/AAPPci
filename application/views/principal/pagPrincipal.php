@@ -97,65 +97,6 @@
 
 <div class="section"></div>
 
-
-
-<!-- modal cliente
-<div id="modalCliente" class="modal modal-fixed-footer">
-<div class="modal-content">
-<div class="center">
-<h3 class="light">Novo cliente</h3>
-<p>Preencha o formulário:</p>
-</div>
-
-<form action="" method="post" id="cadCliente">
-<div class="row">
-<div class="input-field col s6">
-<input type="text" class="validate" id="nomeCliente" name="nome" required>
-<label for="nomeCliente">Nome do cliente (*)</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="validate" id="cpfCliente" name="cpf">
-<label for="cpfCliente">CPF</label>
-</div>
-<div class="input-field col s6">
-<input type="email" class="validate" id="emailCliente" name="email">
-<label for="emailCliente" data-error="Digite um e-mail válido!">E-mail</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="datepicker" id="dataCliente" name="data">
-<label for="dataCliente">Data inicial (*)</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="validate" id="ruaCliente" name="rua" required>
-<label for="ruaCliente">Rua (*)</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="validate" id="casaCliente" name="numCasa">
-<label for="casaCliente">Num. da casa</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="validate" id="bairroCliente" name="bairro">
-<label for="bairroCliente">Bairro</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="validate" id="telCliente" name="telefone" required>
-<label for="telCliente">Telefone (*)</label>
-</div>
-<div class="input-field col s6">
-<input type="text" class="validate" id="celCliente" name="celular">
-<label for="celCliente">Celular</label>
-</div>
-</div>
-</div>
-<div class="modal-footer">
-<button class="modal-action modal-close waves-effect waves-light grey btn left" type="reset">Cancelar</button>
-<button type="submit" class="btn waves-effect waves-light right">Concluir</button>
-</div>
-</form>
-</div>
--->
-
-
 <!-- modal pagamento-->
 <div id="modalPagamento" class="modal modal-fixed-footer">
   <div class="modal-content">

@@ -48,5 +48,26 @@ class Clientes_model extends CI_Model {
         $this->db->where('id_cliente', $id);
         return $this->db->get('cliente')->result();
     }
+    public function atualizar_cliente() {
+        $this->load->helper('url');
+        $this->load->library('session');
+        $data = array(
+          'nome' => $this->input->post('nome'),
+          'cpf' => $this->input->post('cpf'),
+          'email' => $this->input->post('email'),
+          'rua' => $this->input->post('rua'),
+          'num_casa' => $this->input->post('numCasa'),
+          'bairro' => $this->input->post('bairro'),
+          'telefone' => $this->input->post('telefone'),
+          'celular' => $this->input->post('celular')
+        );
+
+        $this->db->where('id_cliente', $this->input->post('id_cliente'));
+        if ($this->db->update('cliente', $data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
   }
 ?>
