@@ -58,7 +58,7 @@ class Cliente extends CI_Controller {
         $this->form_validation->set_rules('nome', 'Nome', 'required', array('required' => 'Preencha o campo Nome.'));
 
 
-        if ($this->form_validation->run() === FALSE) {//erro na validação (ou primeira vez que carregar)
+        if ($this->form_validation->run() === FALSE) {//erro na validaÃ§Ã£o (ou primeira vez que carregar)
             $this->load->view('cabeca');
             $this->load->view('nav');
             $this->load->view('clientes/cadastraCliente');

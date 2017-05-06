@@ -1,5 +1,5 @@
 <div class="container">
-    <h4 class="header">Formul·rio de cadastro - Cliente</h4>
+    <h4 class="header">Formul√°rio de cadastro - Cliente</h4>
     <?php echo validation_errors(); ?>
     <?php echo form_open('index.php/Cliente/cadastrar'); ?>
     <div class="row">
