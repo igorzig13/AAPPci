@@ -18,7 +18,7 @@ class Cliente extends CI_Controller {
         $config['total_rows'] = $this->Clientes_model->conta_clientes();
         $config['per_page'] = $maximo;
         $config['first_link'] = 'Primeiro';
-        $config['last_link'] = '�ltimo';
+        $config['last_link'] = 'Último';
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_tag_open'] = '<li>';
@@ -44,6 +44,13 @@ class Cliente extends CI_Controller {
         $this->load->view('rodape');
     }
 
+    public function formCadastro(){
+      $this->load->view('cabeca');
+      $this->load->view('nav');
+      $this->load->view('clientes/cadastraCliente');
+      $this->load->view('rodape');
+    }
+
     public function cadastrar() {
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -53,7 +60,7 @@ class Cliente extends CI_Controller {
         if ($this->Clientes_model->cadastrar_cliente()) {//tentar inserir
             $this->load->view('cabeca');
             $this->load->view('nav');
-            $this->load->view('clientes/listaClientes', $param);
+            $this->load->view('clientes/cadastraCliente');
             $this->load->view('rodape');
         } else {
             $this->load->view('cabeca');

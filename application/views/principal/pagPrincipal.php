@@ -20,7 +20,7 @@
                 Preencha o formulário de cadastro para adicionar um cliente.
               </div>
               <div class="card-action">
-                <a class=" blue-text zLink right" href="#modalCliente">Formulário de cadastro</a>
+                <a class=" blue-text zLink right" href="<?php echo base_url("index.php/Cliente/formCadastro") ?>">Formulário de cadastro</a>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@
                 Clique para conferir a relação completa de clientes.
               </div>
               <div class="card-action">
-                <a class=" blue-text zLink right" href="<?php echo base_url("Cliente/listar") ?>">Ver clientes</a>
+                <a class=" blue-text zLink right" href="<?php echo base_url("index.php/Cliente/listar") ?>">Ver clientes</a>
               </div>
             </div>
           </div>
@@ -82,16 +82,16 @@
 
   <div class="section"></div>
 
-  
-  
-  <!-- modal cliente -->
+
+
+  <!-- modal cliente
   <div id="modalCliente" class="modal modal-fixed-footer">
     <div class="modal-content">
       <div class="center">
         <h3 class="light">Novo cliente</h3>
         <p>Preencha o formulário:</p>
       </div>
-     
+
       <form action="" method="post" id="cadCliente">
         <div class="row">
           <div class="input-field col s6">
@@ -138,9 +138,9 @@
       </div>
     </form>
   </div>
+-->
 
-  
-  
+
   <!-- modal pagamento-->
   <div id="modalPagamento" class="modal modal-fixed-footer">
     <div class="modal-content">
