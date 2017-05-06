@@ -20,7 +20,7 @@
                 Preencha o formulário de cadastro para adicionar um cliente.
               </div>
               <div class="card-action">
-                <a class=" blue-text zLink right" href="<?php echo base_url("index.php/Cliente/formCadastro") ?>">Formulário de cadastro</a>
+                <a class=" blue-text zLink right" href="<?php echo base_url("index.php/Cliente/cadastrar") ?>">Formulário de cadastro</a>
               </div>
             </div>
           </div>

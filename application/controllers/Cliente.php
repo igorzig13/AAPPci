@@ -44,11 +44,11 @@ class Cliente extends CI_Controller {
         $this->load->view('rodape');
     }
 
-    public function formCadastro(){
-      $this->load->view('cabeca');
-      $this->load->view('nav');
-      $this->load->view('clientes/cadastraCliente');
-      $this->load->view('rodape');
+    public function formCadastro() {
+        $this->load->view('cabeca');
+        $this->load->view('nav');
+        $this->load->view('clientes/cadastraCliente');
+        $this->load->view('rodape');
     }
 
     public function cadastrar() {
@@ -57,7 +57,8 @@ class Cliente extends CI_Controller {
 
         $this->form_validation->set_rules('nome', 'Nome', 'required', array('required' => 'Preencha o campo Nome.'));
 
-        if ($this->Clientes_model->cadastrar_cliente()) {//tentar inserir
+
+        if ($this->form_validation->run() === FALSE) {//erro na validação (ou primeira vez que carregar)
             $this->load->view('cabeca');
             $this->load->view('nav');
             $this->load->view('clientes/cadastraCliente');
@@ -65,10 +66,15 @@ class Cliente extends CI_Controller {
         } else {
             $this->load->view('cabeca');
             $this->load->view('nav');
-            $this->load->view('principal/pagPrincipal');
+            if ($this->Clientes_model->cadastrar_cliente()) {//tentar inserir
+                $this->load->view('clientes/cadastraCliente');
+            } else {
+                $this->load->view('principal/pagPrincipal');
+            }
             $this->load->view('rodape');
         }
     }
+
     public function editar($id) {
         $this->load->library('form_validation');
         $data['dados_cliente'] = $this->Clientes_model->editar($id);
@@ -77,4 +83,5 @@ class Cliente extends CI_Controller {
         $this->load->view('clientes/editaCliente', $data);
         $this->load->view('rodape');
     }
+
 }
