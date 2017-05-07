@@ -10,7 +10,7 @@ class Cliente extends CI_Controller {
         $this->load->model('Clientes_model');
     }
 
-    public function listar() {
+    public function carregarClientes() {
         $this->load->library('pagination');
         $maximo = 10;
         $inicio = (!$this->uri->segment("3")) ? 0 : $this->uri->segment("3");
@@ -38,9 +38,13 @@ class Cliente extends CI_Controller {
         $this->pagination->initialize($config);
         $param["paginacao"] = $this->pagination->create_links();
         $param["clientes"] = $this->Clientes_model->listar_clientes($maximo, $inicio);
+        
+        return $param;
+    }
+    public function listar() {
         $this->load->view('cabeca');
         $this->load->view('nav');
-        $this->load->view('clientes/listaClientes', $param);
+        $this->load->view('clientes/listaClientes', $this->carregarClientes());
         $this->load->view('rodape');
     }
 
@@ -67,9 +71,11 @@ class Cliente extends CI_Controller {
             $this->load->view('cabeca');
             $this->load->view('nav');
             if ($this->Clientes_model->cadastrar_cliente()) {//tentar inserir
-                $this->load->view('clientes/cadastraCliente');
+                $this->load->view('mensagens/sucesso');
+                $this->load->view('clientes/listaClientes', $this->carregarClientes());
             } else {
-                $this->load->view('principal/pagPrincipal');
+                $this->load->view('mensagens/erro');
+                $this->load->view('clientes/cadastraCliente');
             }
             $this->load->view('rodape');
         }
@@ -100,12 +106,14 @@ class Cliente extends CI_Controller {
             $this->load->view('cabeca');
             $this->load->view('nav');
             if ($this->Clientes_model->atualizar_cliente()) {//erro na inserção do novo usuario
-              //  $this->load->view('clientes/listaClientes');
+                $this->load->view('mensagens/sucesso');
+                $this->load->view('clientes/listaClientes', $this->carregarClientes());
             } else {
-              //  $this->load->view('principal/pagPrincipal');
+                $this->load->view('mensagens/erro');
+                $this->load->view('clientes/listaClientes', $this->carregarClientes());
             }
-            $this->load->view('principal/pagPrincipal');
             $this->load->view('rodape');
         }
     }
+
 }
