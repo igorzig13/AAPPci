@@ -38,9 +38,10 @@ class Cliente extends CI_Controller {
         $this->pagination->initialize($config);
         $param["paginacao"] = $this->pagination->create_links();
         $param["clientes"] = $this->Clientes_model->listar_clientes($maximo, $inicio);
-        
+
         return $param;
     }
+
     public function listar() {
         $this->load->view('cabeca');
         $this->load->view('nav');
@@ -114,6 +115,38 @@ class Cliente extends CI_Controller {
             }
             $this->load->view('rodape');
         }
+    }
+
+    public function buscar() {
+        $this->load->view('cabeca');
+        $this->load->view('nav');
+        $this->load->view('clientes/clientes_buscar');
+        $this->load->view('rodape');
+    }
+
+    public function consulta_cliente() {
+        $acao = $this->input->post('acao');
+        $term = $this->input->post('term');
+
+        $rows = $this->Clientes_model->GetAutocomplete($acao, array('keyword' => $term));
+
+        /*
+          $json_array = array();
+          foreach ($rows as $row) {
+          array_push($json_array, $row->nome);
+          }
+         */
+        $json_array = $rows;
+        echo json_encode($json_array);
+    }
+
+    public function detalhar($id) {
+        $data['dados'] = $this->Clientes_model->detalhar($id);
+        //$data = $id;
+        $this->load->view('head');
+        $this->load->view('navbar');
+        $this->load->view('clientes/clientes_detalhar', $data);
+        $this->load->view('footer');
     }
 
 }
