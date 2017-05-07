@@ -11,10 +11,10 @@
         <?php echo validation_errors(); ?>
         <?php echo form_open('index.php/Cliente/atualizar'); ?>
           <div class="col s6">
-            <p>Especifique o ID do cliente que será atualizado:</p>
+            <p>ID do cliente que será atualizado:</p>
           </div>
           <div class="input-field col s6">
-            <input type="text" name="id_cliente" class="validate" id="id_cliente" value="<?php echo $dados_cliente[0]->id_cliente; ?>">
+            <input type="text" name="id_cliente" disabled class="validate" id="id_cliente" value="<?php echo $dados_cliente[0]->id_cliente; ?>">
             <label for="id_cliente">ID do cliente</label>
           </div>
           <div class="divider col s12"></div>
