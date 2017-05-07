@@ -1,6 +1,10 @@
 <div class="container">
-
-    <h2 class="teal-text">Clientes cadastrados</h2>
+  <br>
+  <div class="valign-wrapper">
+    <a href="<?php echo base_url() ?>">Página inicial</a> <i class="material-icons">arrow_forward</i> Lista de Clientes
+  </div>
+  <div class="divider"></div>
+    <h4 class="header center">Clientes cadastrados</h4>
     <table class="striped">
         <thead>
             <tr>
@@ -21,7 +25,7 @@
                     <td><?php echo $clientes_item['cpf']; ?></td>
                     <td><?php echo $clientes_item['rua']; ?></td>
                     <td>
-                        <a href="<?php echo base_url('index.php/Cliente/editar/' . $clientes_item['id_cliente']); ?>"><i class="material-icons">edit</i></a>
+                        <a href="<?php echo base_url('index.php/Cliente/editar/' . $clientes_item['id_cliente']); ?>"><i class="material-icons teal-text">edit</i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>

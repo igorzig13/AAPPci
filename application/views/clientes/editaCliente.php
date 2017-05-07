@@ -3,7 +3,7 @@
     <div class="container">
       <br>
       <div class="valign-wrapper">
-        <a href="pagPrincipal.php">Página inicial</a> <i class="material-icons">arrow_forward</i> <a href="listaClientes.php">Lista de Clientes</a><i class="material-icons">arrow_forward</i> Editar Informações
+        <a href="<?php echo base_url() ?>">Página inicial</a> <i class="material-icons">arrow_forward</i> <a href="<?php echo base_url('index.php/Cliente/listar') ?>">Lista de Clientes</a><i class="material-icons">arrow_forward</i> Editar Informações
       </div>
       <div class="divider"></div>
       <div class="row"><br>
